@@ -1,0 +1,4 @@
+/////AddPscaleAttribForPar
+
+float rand = rand(@ptnum + chi("seed"));
+float ramp = chramp("scale_ramp", rand);

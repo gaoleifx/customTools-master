@@ -1,0 +1,23 @@
+/////AddOrientForPoints
+
+/////AddOrientForPoints
+
+float rand = rand(@ptnum + ch("seed") + 365);
+float angle = fit01(rand, ch("min_angle"), ch("max_angle"));
+////////////////////////////////////
+vector forword = set(0, -1, 0);
+if( rand > ch("percent"))
+    angle = 0;
+//////////////////////////////////// 
+vector up = {0, -1, 0};
+vector dir = normalize(cross(up, v@tangentu));
+//rotate with right or left
+vector axis = dir;
+vector4 qu = quaternion(radians(angle), v@tangentu);
+//rotate by the slope
+float an = acos(dot({0, 1, 0}, normalize(cross(axis, v@tangentu))));
+vector4 alip = quaternion(an, axis);
+//matrix3 m = lookat({0, 0, 0}, dir, up);
+
+matrix3 m = dihedral({0, 0, 1}, axis);
+p@orient = quaternion(m * qconvert(qu) * qconvert(alip));
