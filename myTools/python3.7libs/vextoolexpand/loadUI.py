@@ -48,6 +48,14 @@ class loadUI(QtWidgets.QWidget, Ui_Form):
         self.btn_save_2.clicked.connect(lambda:self.saveCode(self.lineEdit_2.text(), self.lineEdit_2, self.textEdit_2))
         self.btn_update_2.clicked.connect(self.updateCode(self.lineEdit_2.text(), self.textEdit_2, self._text2))
         self.btn_from_2.clicked.connect(lambda:self.fromWrangle(self.textEdit_2))
+
+        self.lineEdit_3.setText('AddPscaleAttrib')
+        self.textEdit_3.setText(self._text3)
+        self.btn_to_3.clicked.connect(lambda:self.data(self.textEdit_3))
+        self.btn_save_3.clicked.connect(lambda:self.saveCode(self.lineEdit_3.text(), self.lineEdit_3, self.textEdit_3))
+        self.btn_update_3.clicked.connect(self.updateCode(self.lineEdit_3.text(), self.textEdit_3, self._text3))
+        self.btn_from_3.clicked.connect(lambda:self.fromWrangle(self.textEdit_3))
+
         
         
         ##################
