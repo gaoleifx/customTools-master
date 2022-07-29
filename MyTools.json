@@ -1,7 +1,7 @@
 {
     "env": [
         {
-            "INSTALL_DIR": "C:/Users/lei.gao/Documents/houdini18.5/customTools-master"
+            "INSTALL_DIR": "E:/GitHub/customTools-master"
         },
         {
             "HOUDINI_PATH": {
@@ -24,6 +24,15 @@
                     },
                     {
                         "houdini_version>'18.5' and houdini_version<'19.0'": "$INSTALL_DIR/myTools/houdini18.5/otls"
+                    }
+                ]
+            }
+        },
+        {
+            "HOUDINI_SCRIPT_PATH":{
+                "value":[
+                    {
+                        "houdini_version>'18.5' and houdini_version<'19.0'": "$INSTALL_DIR/myTools/houdini18.5/scripts"
                     }
                 ]
             }

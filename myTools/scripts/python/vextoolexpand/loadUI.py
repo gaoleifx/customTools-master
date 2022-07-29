@@ -20,7 +20,7 @@ class loadUI(QtWidgets.QWidget, Ui_Form):
 
     def __init__(self):
         super().__init__()
-        self._path = 'D:/Github/customTools-master/myTools/script/vex/'
+        self._path = 'E:/Github/customTools-master/myTools/vex/'
         self._file = ''
         self._text1 = ''
         self._text2 = ''
@@ -99,7 +99,6 @@ class loadUI(QtWidgets.QWidget, Ui_Form):
                 data = f.read()
                 text = data
                 textEdit.setText(text)
-                print('Update code successful')
         else:
             pass
 
