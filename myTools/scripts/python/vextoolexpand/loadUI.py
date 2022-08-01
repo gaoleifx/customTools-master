@@ -20,7 +20,7 @@ class loadUI(QtWidgets.QWidget, Ui_Form):
 
     def __init__(self):
         super().__init__()
-        self._path = 'E:/Github/customTools-master/myTools/vex/'
+        self._path = 'D:/Github/customTools-master/myTools/vex/'
         self._file = ''
         self._text1 = ''
         self._text2 = ''
@@ -36,24 +36,21 @@ class loadUI(QtWidgets.QWidget, Ui_Form):
         
         ###set slot
         self.lineEdit_1.setText('AddOrientForPoints')
-        self.textEdit_1.setText(self._text1)
         self.btn_to_1.clicked.connect(lambda:self.data(self.textEdit_1))
         self.btn_save_1.clicked.connect(lambda:self.saveCode(self.lineEdit_1.text(), self.lineEdit_1, self.textEdit_1))
-        self.btn_update_1.clicked.connect(self.updateCode(self.lineEdit_1.text(), self.textEdit_1, self._text1))
+        self.btn_update_1.clicked.connect(self.updateCode(self.lineEdit_1, self.textEdit_1, self._text1))
         self.btn_from_1.clicked.connect(lambda:self.fromWrangle(self.textEdit_1))
 
         self.lineEdit_2.setText('AddPscaleAttribForPar')
-        self.textEdit_2.setText(self._text2)
         self.btn_to_2.clicked.connect(lambda:self.data(self.textEdit_2))
         self.btn_save_2.clicked.connect(lambda:self.saveCode(self.lineEdit_2.text(), self.lineEdit_2, self.textEdit_2))
-        self.btn_update_2.clicked.connect(self.updateCode(self.lineEdit_2.text(), self.textEdit_2, self._text2))
+        self.btn_update_2.clicked.connect(self.updateCode(self.lineEdit_2, self.textEdit_2, self._text2))
         self.btn_from_2.clicked.connect(lambda:self.fromWrangle(self.textEdit_2))
 
-        self.lineEdit_3.setText('AddPscaleAttrib')
-        self.textEdit_3.setText(self._text3)
+        self.lineEdit_3.setText("randpscale")
         self.btn_to_3.clicked.connect(lambda:self.data(self.textEdit_3))
         self.btn_save_3.clicked.connect(lambda:self.saveCode(self.lineEdit_3.text(), self.lineEdit_3, self.textEdit_3))
-        self.btn_update_3.clicked.connect(self.updateCode(self.lineEdit_3.text(), self.textEdit_3, self._text3))
+        self.btn_update_3.clicked.connect(self.updateCode(self.lineEdit_3, self.textEdit_3, self._text3))
         self.btn_from_3.clicked.connect(lambda:self.fromWrangle(self.textEdit_3))
 
         
@@ -92,13 +89,15 @@ class loadUI(QtWidgets.QWidget, Ui_Form):
 
         print('Save code successful')
 
-    def updateCode(self, file, textEdit, text):
-        path = self._path + file + '.vfl'
+    def updateCode(self, lineEdit, textEdit, text):
+        path = self._path + lineEdit.text() + '.vfl'
         if os.path.exists(path):
             with open(path, 'r') as f:
                 data = f.read()
-                text = data
-                textEdit.setText(text)
+                f.seek(0, 0)
+                head = f.readline().split('/')[-1]
+                lineEdit.setText(head)
+                textEdit.setText(data)
         else:
             pass
 

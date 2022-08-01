@@ -1,0 +1,38 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>42462mountain_99130.svg</file>
+    <file>brocoli.svg</file>
+    <file>cabbage.svg</file>
+    <file>carrot.svg</file>
+    <file>direction_street_road_sign_icon_148680.svg</file>
+    <file>road_map_flag_sign_icon_148686.svg</file>
+    <file>tree.svg</file>
+  </qresource>
+  <qresource prefix="Interface">
+    <file>Interface/accept_mark_true_check_icon_226583.svg</file>
+    <file>Interface/app_menu_grid_ui_icon_226584.svg</file>
+    <file>Interface/battery_electricity_energy_full_icon_226576.svg</file>
+    <file>Interface/cancel_delete_strips_minus_icon_226572.svg</file>
+    <file>Interface/checklist_menu_vertical_list_icon_226596.svg</file>
+    <file>Interface/contact_communication_phone_book_icon_226582.svg</file>
+    <file>Interface/display_minimize_screen_monitor_icon_226589.svg</file>
+    <file>Interface/dot_checklist_list_todo_icon_226578.svg</file>
+    <file>Interface/full_display_monitor_screen_icon_226575.svg</file>
+    <file>Interface/home_building_house_menu_icon_226590.svg</file>
+    <file>Interface/home_mobile_ui_button_icon_226573.svg</file>
+    <file>Interface/home_ux_house_ui_icon_226580.svg</file>
+    <file>Interface/incorrect_remove_delete_cross_icon_226597.svg</file>
+    <file>Interface/list_menu_document_burger_icon_226588.svg</file>
+    <file>Interface/magnifier_search_out_zoom_icon_226587.svg</file>
+    <file>Interface/magnifying_glass_magnifier_in_zoom_icon_226592.svg</file>
+    <file>Interface/off_on_switch_button_icon_226569.svg</file>
+    <file>Interface/options_configuration_menu_setting_icon_226594.svg</file>
+    <file>Interface/photo_crop_frame_picture_icon_226581.svg</file>
+    <file>Interface/plus_add_contact_account_icon_226585.svg</file>
+    <file>Interface/plus_new_add_cross_icon_226595.svg</file>
+    <file>Interface/search_find_glass_magnifier_icon_226571.svg</file>
+    <file>Interface/user_member_profile_account_icon_226568.svg</file>
+    <file>Interface/users_group_members_team_icon_226574.svg</file>
+    <file>Interface/zoom_find_search_button_icon_226593.svg</file>
+  </qresource>
+</RCC>
