@@ -1,0 +1,4 @@
+/////randpscale
+
+float rand = rand(@ptnum);
+float ramp = chramp("color_ramp", rand);

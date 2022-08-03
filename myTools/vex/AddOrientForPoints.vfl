@@ -1,7 +1,5 @@
 /////AddOrientForPoints
 
-/////AddOrientForPoints
-
 float rand = rand(@ptnum + ch("seed") + 365);
 float angle = fit01(rand, ch("min_angle"), ch("max_angle"));
 ////////////////////////////////////
