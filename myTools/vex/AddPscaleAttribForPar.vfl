@@ -2,3 +2,6 @@
 
 float rand = rand(@ptnum + chi("seed"));
 float ramp = chramp("scale_ramp", rand);
+float range = fit01(ramp, ch("min"), ch("max"));
+
+f@pscale = range * ch("pscale");
