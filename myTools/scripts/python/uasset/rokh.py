@@ -2,7 +2,7 @@ import logging
 import re
 import collections
 import struct
-from StringIO import StringIO
+from io import StringIO
 import codecs
 import binascii
 import math
@@ -51,9 +51,9 @@ def hprint(data, n=4, s=6):
     
     dline=[dline[h:h+n] for h in range(0, len(dline), n)]
 
-    print '{0:<{width}}:'.format(x, width=address_width), \
-          '   '.join([' '.join(hline[h:h+n]) for h in range(0, len(hline), n)])
-    print ' '*(address_width+1),
+    print( '{0:<{width}}:'.format(x, width=address_width), \
+          '   '.join([' '.join(hline[h:h+n]) for h in range(0, len(hline), n)]))
+    print (' '*(address_width+1),)
     for g in dline:
       for x in g:
         if ord(x) <= 13:
@@ -63,8 +63,8 @@ def hprint(data, n=4, s=6):
         elif ord(x) >= 127:
           sys.stdout.write(str(ord(x)))
         else:
-          print x+' ',
-      print ' ',
+          print (x+' ',)
+      print (' ',)
     print('\n')
 
 def sdiff(*a):
