@@ -212,6 +212,9 @@ Wrangle</string>
          </widget>
         </item>
         <item>
+         <widget class="QComboBox" name="comboBox_1"/>
+        </item>
+        <item>
          <widget class="QTextEdit" name="textEdit_1"/>
         </item>
         <item>
@@ -457,6 +460,9 @@ Wrangle</string>
            <bool>false</bool>
           </property>
          </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBox_3"/>
         </item>
         <item>
          <widget class="QTextEdit" name="textEdit_3"/>
@@ -706,6 +712,9 @@ Wrangle</string>
          </widget>
         </item>
         <item>
+         <widget class="QComboBox" name="comboBox_4"/>
+        </item>
+        <item>
          <widget class="QTextEdit" name="textEdit_4"/>
         </item>
         <item>
@@ -951,6 +960,9 @@ Wrangle</string>
            <bool>false</bool>
           </property>
          </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBox_2"/>
         </item>
         <item>
          <widget class="QTextEdit" name="textEdit_2"/>
@@ -1200,6 +1212,9 @@ Wrangle</string>
          </widget>
         </item>
         <item>
+         <widget class="QComboBox" name="comboBox_5"/>
+        </item>
+        <item>
          <widget class="QTextEdit" name="textEdit_5"/>
         </item>
         <item>
@@ -1445,6 +1460,9 @@ Wrangle</string>
            <bool>false</bool>
           </property>
          </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBox_6"/>
         </item>
         <item>
          <widget class="QTextEdit" name="textEdit_6"/>
