@@ -20,13 +20,14 @@ class loadUI(QtWidgets.QWidget, Ui_Form):
 
     def __init__(self):
         super().__init__()
-        self._path = 'D:/Github/customTools-master/myTools/vex/'
+        self._path = 'E:/Github/customTools-master/myTools/vex/'
         self._file = ''
         self._text1 = ''
         self._text2 = ''
         self._text3 = ''
         self._text4 = ''
         self._text5 = ''
+        self._text6 = ''
 
         #Ui_Form.__init__(self)
         
@@ -53,6 +54,23 @@ class loadUI(QtWidgets.QWidget, Ui_Form):
         self.btn_update_3.clicked.connect(self.updateCode(self.lineEdit_3, self.textEdit_3, self._text3))
         self.btn_from_3.clicked.connect(lambda:self.fromWrangle(self.textEdit_3))
 
+        self.lineEdit_4.setText("")
+        self.btn_to_4.clicked.connect(lambda:self.data(self.textEdit_4))
+        self.btn_save_4.clicked.connect(lambda:self.saveCode(self.lineEdit_4.text(), self.lineEdit_4, self.textEdit_4))
+        self.btn_update_4.clicked.connect(self.updateCode(self.lineEdit_4, self.textEdit_4, self._text4))
+        self.btn_from_4.clicked.connect(lambda:self.fromWrangle(self.textEdit_4))
+
+        self.lineEdit_5.setText("")
+        self.btn_to_5.clicked.connect(lambda:self.data(self.textEdit_5))
+        self.btn_save_5.clicked.connect(lambda:self.saveCode(self.lineEdit_5.text(), self.lineEdit_5, self.textEdit_5))
+        self.btn_update_5.clicked.connect(self.updateCode(self.lineEdit_5, self.textEdit_5, self._text5))
+        self.btn_from_5.clicked.connect(lambda:self.fromWrangle(self.textEdit_5))
+
+        self.lineEdit_6.setText("")
+        self.btn_to_6.clicked.connect(lambda:self.data(self.textEdit_6))
+        self.btn_save_6.clicked.connect(lambda:self.saveCode(self.lineEdit_6.text(), self.lineEdit_6, self.textEdit_6))
+        self.btn_update_6.clicked.connect(self.updateCode(self.lineEdit_6, self.textEdit_6, self._text6))
+        self.btn_from_6.clicked.connect(lambda:self.fromWrangle(self.textEdit_6))
         
         
         ##################
