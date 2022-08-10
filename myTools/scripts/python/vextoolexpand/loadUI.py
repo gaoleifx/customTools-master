@@ -6,6 +6,7 @@ except:
     from initUI import Ui_Form
 
 from imp import reload
+from operator import truediv
 from shelve import Shelf
 from PySide2 import QtCore, QtGui, QtWidgets
 
@@ -34,43 +35,84 @@ class loadUI(QtWidgets.QWidget, Ui_Form):
         self.setupUi(self)
         self.setParent(hou.ui.mainQtWindow(), QtCore.Qt.Window)
         self.setLayout(self.gridLayout)
+
         
-        ###set slot
-        self.lineEdit_1.setText('AddOrientForPoints')
+        ###set item1#######
+        self.setComboBox(self.comboBox_1)
+        self.comboBox_1.setLineEdit(self.lineEdit_1)
+        self.lineEdit_1.setText(self.comboBox_1.itemText(0))
+        self.comboBox_1.activated.connect(lambda:self.updateCode(self.lineEdit_1, self.textEdit_1, self._text1))
         self.btn_to_1.clicked.connect(lambda:self.data(self.textEdit_1))
         self.btn_save_1.clicked.connect(lambda:self.saveCode(self.lineEdit_1.text(), self.lineEdit_1, self.textEdit_1))
         self.btn_update_1.clicked.connect(self.updateCode(self.lineEdit_1, self.textEdit_1, self._text1))
         self.btn_from_1.clicked.connect(lambda:self.fromWrangle(self.textEdit_1))
 
-        self.lineEdit_2.setText('AddPscaleAttribForPar')
+        ###set item2#######
+        self.setComboBox(self.comboBox_2)
+        self.comboBox_2.setLineEdit(self.lineEdit_2)
+        self.lineEdit_2.setText(self.comboBox_2.itemText(1))
+        self.comboBox_2.activated.connect(lambda:self.updateCode(self.lineEdit_2, self.textEdit_2, self._text2))
         self.btn_to_2.clicked.connect(lambda:self.data(self.textEdit_2))
         self.btn_save_2.clicked.connect(lambda:self.saveCode(self.lineEdit_2.text(), self.lineEdit_2, self.textEdit_2))
         self.btn_update_2.clicked.connect(self.updateCode(self.lineEdit_2, self.textEdit_2, self._text2))
         self.btn_from_2.clicked.connect(lambda:self.fromWrangle(self.textEdit_2))
 
-        self.lineEdit_3.setText("randpscale")
+        ###set item3#######
+        self.setComboBox(self.comboBox_3)
+        self.comboBox_3.setLineEdit(self.lineEdit_3)
+        self.lineEdit_3.setText(self.comboBox_2.itemText(2))
+        self.comboBox_3.activated.connect(lambda:self.updateCode(self.lineEdit_3, self.textEdit_3, self._text3))
         self.btn_to_3.clicked.connect(lambda:self.data(self.textEdit_3))
         self.btn_save_3.clicked.connect(lambda:self.saveCode(self.lineEdit_3.text(), self.lineEdit_3, self.textEdit_3))
         self.btn_update_3.clicked.connect(self.updateCode(self.lineEdit_3, self.textEdit_3, self._text3))
         self.btn_from_3.clicked.connect(lambda:self.fromWrangle(self.textEdit_3))
 
+<<<<<<< HEAD
         self.lineEdit_4.setText("")
+=======
+        ###set item4#######
+        self.setComboBox(self.comboBox_4)
+        self.comboBox_4.setLineEdit(self.lineEdit_4)
+        self.lineEdit_4.setText(self.comboBox_4.itemText(2))
+        self.comboBox_4.activated.connect(lambda:self.updateCode(self.lineEdit_4, self.textEdit_4, self._text4))
+>>>>>>> d9ecd2fbd44d3d6181552c65bb0c4b89e325101f
         self.btn_to_4.clicked.connect(lambda:self.data(self.textEdit_4))
         self.btn_save_4.clicked.connect(lambda:self.saveCode(self.lineEdit_4.text(), self.lineEdit_4, self.textEdit_4))
         self.btn_update_4.clicked.connect(self.updateCode(self.lineEdit_4, self.textEdit_4, self._text4))
         self.btn_from_4.clicked.connect(lambda:self.fromWrangle(self.textEdit_4))
 
+<<<<<<< HEAD
         self.lineEdit_5.setText("")
+=======
+        ###set item5#######
+        self.setComboBox(self.comboBox_5)
+        self.comboBox_5.setLineEdit(self.lineEdit_5)
+        self.lineEdit_5.setText(self.comboBox_5.itemText(2))
+        self.comboBox_5.activated.connect(lambda:self.updateCode(self.lineEdit_5, self.textEdit_5, self._text5))
+>>>>>>> d9ecd2fbd44d3d6181552c65bb0c4b89e325101f
         self.btn_to_5.clicked.connect(lambda:self.data(self.textEdit_5))
         self.btn_save_5.clicked.connect(lambda:self.saveCode(self.lineEdit_5.text(), self.lineEdit_5, self.textEdit_5))
         self.btn_update_5.clicked.connect(self.updateCode(self.lineEdit_5, self.textEdit_5, self._text5))
         self.btn_from_5.clicked.connect(lambda:self.fromWrangle(self.textEdit_5))
 
+<<<<<<< HEAD
         self.lineEdit_6.setText("")
+=======
+        ###set item6#######
+        self.setComboBox(self.comboBox_6)
+        self.comboBox_6.setLineEdit(self.lineEdit_6)
+        self.lineEdit_6.setText(self.comboBox_6.itemText(2))
+        self.comboBox_6.activated.connect(lambda:self.updateCode(self.lineEdit_6, self.textEdit_6, self._text6))
+>>>>>>> d9ecd2fbd44d3d6181552c65bb0c4b89e325101f
         self.btn_to_6.clicked.connect(lambda:self.data(self.textEdit_6))
         self.btn_save_6.clicked.connect(lambda:self.saveCode(self.lineEdit_6.text(), self.lineEdit_6, self.textEdit_6))
         self.btn_update_6.clicked.connect(self.updateCode(self.lineEdit_6, self.textEdit_6, self._text6))
         self.btn_from_6.clicked.connect(lambda:self.fromWrangle(self.textEdit_6))
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> d9ecd2fbd44d3d6181552c65bb0c4b89e325101f
         
         
         ##################
@@ -120,6 +162,15 @@ class loadUI(QtWidgets.QWidget, Ui_Form):
             pass
 
 
+    def setComboBox(self, comboBox:QtWidgets.QComboBox):
+        path = self._path
+        for root, folders, files in os.walk(path):
+            for file in files:
+                ext = os.path.splitext(file)
+                if ext[1] == '.vfl':
+                    comboBox.addItem(ext[0])
+
+    
 
 
     @property

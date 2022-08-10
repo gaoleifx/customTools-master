@@ -1,0 +1,29 @@
+/////GetNormalOfTerrain
+
+function vector dir(vector pos, int input)
+{
+    vector updir = normalize(volumeindextopos(input, 'height', {0, 0, 1}) - volumeindextopos(input, 'height', {0, 0, 0}));
+    
+    int heightnum = nametoprim(input, 'height');
+    vector volpos = point(input, 'P', primpoint(input, heightnum, 0));
+    
+    matrix3 vxform = primintrinsic(input, 'transform', heightnum);
+    vxform = invert(vxform);
+    vector voluv = vxform * (pos - volpos);
+    voluv += 1;
+    voluv *= 0.5;
+    
+    vector nor = -prim_normal(input, heightnum, voluv);
+    return nor;
+}
+
+vector dir2 = normalize(dir(@P)*{1, 0, 1});
+@N = dir2;
+
+
+//float curvature = -volumeindex(2, 0, set(@ix, @iy, i@z));
+float curvature = -volumesample(2, "mask", @P);
+curvature = fit(curvature, chf('min_curvature'), chf('max_curvature'), 0, 1);
+float mask = chramp('curvatureramp', curvature);
+f@mask = mask;
+
