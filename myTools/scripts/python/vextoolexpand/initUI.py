@@ -13,7 +13,7 @@ from PySide2 import QtCore, QtGui, QtWidgets
 
 class Ui_Form(object):
     def setupUi(self, Form):
-        Form.setObjectName("Form")
+        Form.setObjectName("VEX Tool")
         Form.resize(1032, 770)
         self.gridLayoutWidget = QtWidgets.QWidget(Form)
         self.gridLayoutWidget.setGeometry(QtCore.QRect(130, 30, 716, 532))

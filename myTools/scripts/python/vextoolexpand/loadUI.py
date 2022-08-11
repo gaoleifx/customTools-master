@@ -67,52 +67,35 @@ class loadUI(QtWidgets.QWidget, Ui_Form):
         self.btn_update_3.clicked.connect(self.updateCode(self.lineEdit_3, self.textEdit_3, self._text3))
         self.btn_from_3.clicked.connect(lambda:self.fromWrangle(self.textEdit_3))
 
-<<<<<<< HEAD
-        self.lineEdit_4.setText("")
-=======
         ###set item4#######
         self.setComboBox(self.comboBox_4)
         self.comboBox_4.setLineEdit(self.lineEdit_4)
-        self.lineEdit_4.setText(self.comboBox_4.itemText(2))
+        self.lineEdit_4.setText(self.comboBox_4.itemText(3))
         self.comboBox_4.activated.connect(lambda:self.updateCode(self.lineEdit_4, self.textEdit_4, self._text4))
->>>>>>> d9ecd2fbd44d3d6181552c65bb0c4b89e325101f
         self.btn_to_4.clicked.connect(lambda:self.data(self.textEdit_4))
         self.btn_save_4.clicked.connect(lambda:self.saveCode(self.lineEdit_4.text(), self.lineEdit_4, self.textEdit_4))
         self.btn_update_4.clicked.connect(self.updateCode(self.lineEdit_4, self.textEdit_4, self._text4))
         self.btn_from_4.clicked.connect(lambda:self.fromWrangle(self.textEdit_4))
 
-<<<<<<< HEAD
-        self.lineEdit_5.setText("")
-=======
         ###set item5#######
         self.setComboBox(self.comboBox_5)
         self.comboBox_5.setLineEdit(self.lineEdit_5)
-        self.lineEdit_5.setText(self.comboBox_5.itemText(2))
+        self.lineEdit_5.setText(self.comboBox_5.itemText(4))
         self.comboBox_5.activated.connect(lambda:self.updateCode(self.lineEdit_5, self.textEdit_5, self._text5))
->>>>>>> d9ecd2fbd44d3d6181552c65bb0c4b89e325101f
         self.btn_to_5.clicked.connect(lambda:self.data(self.textEdit_5))
         self.btn_save_5.clicked.connect(lambda:self.saveCode(self.lineEdit_5.text(), self.lineEdit_5, self.textEdit_5))
         self.btn_update_5.clicked.connect(self.updateCode(self.lineEdit_5, self.textEdit_5, self._text5))
         self.btn_from_5.clicked.connect(lambda:self.fromWrangle(self.textEdit_5))
 
-<<<<<<< HEAD
-        self.lineEdit_6.setText("")
-=======
         ###set item6#######
         self.setComboBox(self.comboBox_6)
         self.comboBox_6.setLineEdit(self.lineEdit_6)
-        self.lineEdit_6.setText(self.comboBox_6.itemText(2))
+        self.lineEdit_6.setText(self.comboBox_6.itemText(5))
         self.comboBox_6.activated.connect(lambda:self.updateCode(self.lineEdit_6, self.textEdit_6, self._text6))
->>>>>>> d9ecd2fbd44d3d6181552c65bb0c4b89e325101f
         self.btn_to_6.clicked.connect(lambda:self.data(self.textEdit_6))
         self.btn_save_6.clicked.connect(lambda:self.saveCode(self.lineEdit_6.text(), self.lineEdit_6, self.textEdit_6))
         self.btn_update_6.clicked.connect(self.updateCode(self.lineEdit_6, self.textEdit_6, self._text6))
         self.btn_from_6.clicked.connect(lambda:self.fromWrangle(self.textEdit_6))
-<<<<<<< HEAD
-=======
-
-
->>>>>>> d9ecd2fbd44d3d6181552c65bb0c4b89e325101f
         
         
         ##################
