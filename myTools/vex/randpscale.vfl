@@ -1,4 +1,4 @@
-/////randpscale
-
-float rand = rand(@ptnum);
+float rand = rand(@ptnum + chi("seed"));
 float ramp = chramp("color_ramp", rand);
+float value = fit01(ramp, ch("min_value"), ch("max_value")) * ch("pscale");
+f@pscale = value;

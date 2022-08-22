@@ -1,6 +1,4 @@
-/////GetNormalOfTerrain
-
-function vector dir(vector pos, int input)
+function vector dir(vector pos; int input)
 {
     vector updir = normalize(volumeindextopos(input, 'height', {0, 0, 1}) - volumeindextopos(input, 'height', {0, 0, 0}));
     
@@ -17,7 +15,7 @@ function vector dir(vector pos, int input)
     return nor;
 }
 
-vector dir2 = normalize(dir(@P)*{1, 0, 1});
+vector dir2 = normalize(dir(@P, 1)*{1, 0, 1});
 @N = dir2;
 
 

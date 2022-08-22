@@ -1,0 +1,2 @@
+float ramp = vertexprimindex(0, @vtxnum) / float(primvertexcount(0, @primnum));
+f@ramp = ramp;

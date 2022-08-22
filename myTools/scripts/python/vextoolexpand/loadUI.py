@@ -127,7 +127,6 @@ class loadUI(QtWidgets.QWidget, Ui_Form):
         text = textEdit.toPlainText()
 
         with open(path, 'w') as f:
-            f.write('/////{0}\n\n'.format(title))
             f.write(text)
 
         print('Save code successful')
@@ -138,7 +137,7 @@ class loadUI(QtWidgets.QWidget, Ui_Form):
             with open(path, 'r') as f:
                 data = f.read()
                 f.seek(0, 0)
-                head = f.readline().split('/')[-1]
+                head = lineEdit.text()
                 lineEdit.setText(head)
                 textEdit.setText(data)
         else:
