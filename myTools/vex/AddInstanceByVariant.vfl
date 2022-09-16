@@ -1,0 +1,12 @@
+int variants[] = uniquevals(0, "point", "variant");
+
+foreach(int var; variants){
+    for(int pt=0; pt<npoints(0); pt++){
+        int variant = point(0, "variant", pt);
+        if(variant == var){
+            string asset = chs(sprintf("asset%d", var+1));
+            setpointattrib(0, "unreal_instance", pt, asset, "set");
+        }
+    }
+}
+    

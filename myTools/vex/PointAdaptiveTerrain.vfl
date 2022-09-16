@@ -1,0 +1,4 @@
+vector updir = normalize(volumeindextopos(1, 'height', {0, 0, 1}) - volumeindextopos(1, 'height', {0, 0, 0}));
+@P -= updir * dot(@P, updir);
+@P += updir * dot(vector(point(1, 'P', primpoint(1, nametoprim(1, 'height'), 0))), updir);
+@P += updir * volumesample(1, 'height', @P);
