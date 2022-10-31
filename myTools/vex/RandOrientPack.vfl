@@ -1,0 +1,22 @@
+matrix3 trn = primintrinsic(0, "transform", @primnum);
+//maketransform(0, 0, {0, 0, 0}, {0, 0, 0},
+float randx = rand(@ptnum + chi("seed"));
+float randy = rand(@ptnum + 12.35 + chi("seed"));
+float randz = rand(@ptnum + 36.58 + chi("seed"));
+float dir0 = fit01(randx, -1, 1);
+float dir1 = fit01(randy, -1, 1);
+float dir2 = fit01(randz, -1, 1);
+
+vector randdir1 = normalize(set(dir0, dir1, dir2));
+float angle = radians((ch("angle") * (@Frame / 24)) * ch("speed"));
+vector4 orient1 = quaternion(angle, randdir1);
+//trn *= qconvert(orient1);
+
+vector vel_dir = normalize(v@v);
+float vel_len = length(@v);
+vector dirx = normalize(cross(vel_dir, {0, 1, 0}));
+vector dirz = normalize(cross(vel_dir, dirx));
+vector randdir2 = fit01(set(randx, randy, randz), dirx, dirz);
+vector4 orient2 = quaternion(angle * vel_len, randdir2);
+trn *= qconvert(orient2);
+setprimintrinsic(0, "transform", @primnum, trn, "set");
