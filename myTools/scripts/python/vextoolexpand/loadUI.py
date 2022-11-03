@@ -13,6 +13,7 @@ from PySide2 import QtCore, QtGui, QtWidgets
 import sys
 import hou
 import os
+import json
 import vexpressionmenu
 
 reload(initUI)
@@ -114,7 +115,14 @@ class loadUI(QtWidgets.QWidget, Ui_Form):
         else:
             node.parm('snippet').set(text)
 
+        parms = node.parms()
+        parmNameList = []
+        for parm in parms:
+            parmNameList.append(parm.name())
+
         vexpressionmenu.createSpareParmsFromChCalls(node, 'snippet')
+
+        
 
     def fromWrangle(self, textEdit):
         node = hou.selectedNodes()[0]
@@ -129,7 +137,34 @@ class loadUI(QtWidgets.QWidget, Ui_Form):
         with open(path, 'w') as f:
             f.write(text)
 
+        self.saveNodeParms(lineEdit)
         print('Save code successful')
+
+    def saveNodeParms(self, lineEdit):
+        node = hou.selectedNodes()[0]
+        nodeTypeName = node.type().name()
+        nodeDefaultJsonPath = self._path + nodeTypeName + 'NodeDefault' + '.json'
+        with open(nodeDefaultJsonPath, 'r') as f:
+            data = json.load(f)
+        
+        aa = node.parms()
+        for a in aa:
+            print(a.name())
+
+        parms = node.parms()
+        parmDict = {}
+        parmNameList = []
+        for parm in parms:
+            if parm.name() not in data.keys():
+                parmType = parm.parmTemplate().type().name()
+                if parmType != 'Ramp':
+                    parmDict[parm.name()] = parm.eval()
+                else:
+                    ramp = parm.evalAsRamp()
+                    print(ramp.isColor())
+
+
+        self.outputJson(lineEdit, parmDict)
 
     def updateCode(self, lineEdit, textEdit, text):
         path = self._path + lineEdit.text() + '.vfl'
@@ -153,7 +188,10 @@ class loadUI(QtWidgets.QWidget, Ui_Form):
                     comboBox.addItem(ext[0])
 
     
-
+    def outputJson(self, lineEdit, jsonitems):
+        path = self._path + lineEdit.text() + '.json'
+        with open(path, 'a+') as f:
+            json.dump(jsonitems, f)
 
     @property
     def text1(self):

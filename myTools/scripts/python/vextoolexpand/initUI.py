@@ -573,34 +573,34 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
-        self.btn_update_1.setText(_translate("Form", "更新"))
-        self.btn_from_1.setText(_translate("Form", "From \n"
+        Form.setWindowTitle(_translate("VEX Tool", "VEX Tool"))
+        self.btn_update_1.setText(_translate("VEX Tool", "更新"))
+        self.btn_from_1.setText(_translate("VEX Tool", "From \n"
 "Wrangle"))
-        self.btn_save_1.setText(_translate("Form", "保存"))
-        self.btn_to_1.setText(_translate("Form", "To Wrangle"))
-        self.btn_update_3.setText(_translate("Form", "更新"))
-        self.btn_from_3.setText(_translate("Form", "From \n"
+        self.btn_save_1.setText(_translate("VEX Tool", "保存"))
+        self.btn_to_1.setText(_translate("VEX Tool", "To Wrangle"))
+        self.btn_update_3.setText(_translate("VEX Tool", "更新"))
+        self.btn_from_3.setText(_translate("VEX Tool", "From \n"
 "Wrangle"))
         self.btn_save_3.setText(_translate("Form", "保存"))
-        self.btn_to_3.setText(_translate("Form", "To Wrangle"))
-        self.btn_update_4.setText(_translate("Form", "更新"))
-        self.btn_from_4.setText(_translate("Form", "From \n"
+        self.btn_to_3.setText(_translate("VEX Tool", "To Wrangle"))
+        self.btn_update_4.setText(_translate("VEX Tool", "更新"))
+        self.btn_from_4.setText(_translate("VEX Tool", "From \n"
 "Wrangle"))
-        self.btn_save_4.setText(_translate("Form", "保存"))
-        self.btn_to_4.setText(_translate("Form", "To Wrangle"))
-        self.btn_update_2.setText(_translate("Form", "更新"))
-        self.btn_from_2.setText(_translate("Form", "From \n"
+        self.btn_save_4.setText(_translate("VEX Tool", "保存"))
+        self.btn_to_4.setText(_translate("VEX Tool", "To Wrangle"))
+        self.btn_update_2.setText(_translate("VEX Tool", "更新"))
+        self.btn_from_2.setText(_translate("VEX Tool", "From \n"
 "Wrangle"))
-        self.btn_save_2.setText(_translate("Form", "保存"))
-        self.btn_to_2.setText(_translate("Form", "To Wrangle"))
-        self.btn_update_5.setText(_translate("Form", "更新"))
-        self.btn_from_5.setText(_translate("Form", "From \n"
+        self.btn_save_2.setText(_translate("VEX Tool", "保存"))
+        self.btn_to_2.setText(_translate("VEX Tool", "To Wrangle"))
+        self.btn_update_5.setText(_translate("VEX Tool", "更新"))
+        self.btn_from_5.setText(_translate("VEX Tool", "From \n"
 "Wrangle"))
-        self.btn_save_5.setText(_translate("Form", "保存"))
-        self.btn_to_5.setText(_translate("Form", "To Wrangle"))
-        self.btn_update_6.setText(_translate("Form", "更新"))
-        self.btn_from_6.setText(_translate("Form", "From \n"
+        self.btn_save_5.setText(_translate("VEX Tool", "保存"))
+        self.btn_to_5.setText(_translate("VEX Tool", "To Wrangle"))
+        self.btn_update_6.setText(_translate("VEX Tool", "更新"))
+        self.btn_from_6.setText(_translate("VEX Tool", "From \n"
 "Wrangle"))
-        self.btn_save_6.setText(_translate("Form", "保存"))
-        self.btn_to_6.setText(_translate("Form", "To Wrangle"))
+        self.btn_save_6.setText(_translate("VEX Tool", "保存"))
+        self.btn_to_6.setText(_translate("VEX Tool", "To Wrangle"))
