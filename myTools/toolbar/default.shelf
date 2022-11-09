@@ -9,6 +9,8 @@
     <memberTool name="flipbook"/>
     <memberTool name="tool_3"/>
     <memberTool name="startfile"/>
+    <memberTool name="savepreset"/>
+    <memberTool name="tool_1"/>
   </toolshelf>
 
   <tool name="flipbook" label="Flipbook" icon="hicon:/SVGIcons.index?BUTTONS_addasset.svg">
