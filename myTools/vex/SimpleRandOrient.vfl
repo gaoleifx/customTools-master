@@ -1,0 +1,4 @@
+float rand = rand(@ptnum+53.2);
+vector axis = {0, 1, 0};
+float angle = radians(fit01(rand, 0, 360));
+p@orient = quaternion(angle, axis);
