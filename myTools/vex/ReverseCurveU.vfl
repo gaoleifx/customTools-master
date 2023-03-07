@@ -1,0 +1,4 @@
+float ramp = vertexprimindex(0, @vtxnum) / float(primvertexcount(0, @primnum)-1);
+ramp = chramp("u_rmap", ramp);
+vector myuv = set(ramp, 1, 0);
+@P = primuv(0, "P", @primnum, myuv);
