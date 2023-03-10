@@ -22,7 +22,7 @@ class loadUI(QtWidgets.QWidget, Ui_Form):
 
     def __init__(self):
         super().__init__()
-        self._path = 'D:/Github/customTools-master/myTools/vex/'
+        self._path = '{0}/vex/'.format(os.getenv('MYTOOLS').replace('\\', '/'))
         self._file = ''
         self._text1 = ''
         self._text2 = ''
